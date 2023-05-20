@@ -4,12 +4,58 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/css/main.css">
     <script src="https://cdn.tailwindcss.com"></script>
-    <title>Document</title>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <title>SwiftCare</title>
 </head>
 <body>
-    <h1 class="text-7xl font-bold text-center bg-gradient-to-r from-blue-500 to-teal-400 bg-clip-text text-transparent p-5">
-        SwiftCare sedang dibuat tungguin ya :)
-    </h1>
+    <nav class="fixed w-full p-5 md:flex md:items-center md:justify-between px-10 lg:px-20 duration-200">
+        <div class="flex justify-between items-center lg:px-3 ">
+            <span class="text-2xl">
+                <h1 class="text-3xl font-bold text-center text-violet-500">
+                    SWIFTCARE
+                </h1>
+            </span>
+            <span class="text-3xl cursor-pointer mx-2 md:hidden block">
+                <ion-icon name="menu-outline" onclick="Menu(this)"></ion-icon>
+            </span>
+        </div>
+        <ul class="list-menu md:flex md:items-center md:z-auto md:static font-medium absolute w-full left-0 md:w-auto md:py-0 py-4 md:pl-0 pl-7 md:opacity-100 opacity-0 top-[-400px] transition-all ease-in duration-500">
+            <li class="mx-8 my-6 md:my-0">
+                <a href="#" class="text-xl hover:text-violet-500 duration-500">Home</a>
+            </li>
+            <li class="mx-8 my-6 md:my-0">
+                <a href="#" class="text-xl hover:text-violet-500 duration-500">Artikel</a>
+            </li>
+            <li class="mx-8 my-6 md:my-0">
+                <a href="#" class="text-xl hover:text-violet-500 duration-500">Chatbot</a>
+            </li>
+            <li class="mx-8 my-6 md:my-0">
+                <a href="#" class="text-xl hover:text-violet-500 duration-500">Tentang Kami</a>
+            </li>
+        </ul>
+    </nav>
+
+    <section id="hero">
+        <div class="min-h-screen px-8 pt-20 md:px-12 bg-gray-100 text-gray-800 text-center lg:text-left">
+            <div class="container mx-auto pt-5 xl:px-10">
+                <div class="grid lg:grid-cols-11 gap-12 flex items-center">
+                    <div class="mt-10 lg:mt-0 col-span-6">
+                        <h1 class="text-5xl md:text-6xl xl:text-6xl font-bold mb-2">Kenali Kesehatan Mentalmu</h1>
+                        <p class="mb-10 text-xl">Selamat datang di sumber informasi kesehatan mental yang dapat dipercaya! Jaga kesehatan mental Anda dengan wawasan tentang kesehatan mental dan tips untuk menjaga keseimbangan emosi Anda. 
+                            <br>Have a splendid day!</p>
+                        <a class="text-xl px-7 py-3 bg-violet-500 text-white font-medium text-sm rounded shadow-lg shadow-violet-500/50 hover:bg-violet-700 hover:shadow-violet-600/50" href="#" role="button">Mulai Chat</a>
+                    </div>
+                    <div class="mb-12 lg:mb-0 lg:col-span-5 col-span-6">
+                        <img src="../static/img/hero.png" alt="emotion-photo"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="../static/js/function.js"></script>
 </body>
 </html>
