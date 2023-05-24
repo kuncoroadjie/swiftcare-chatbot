@@ -4,14 +4,18 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../static/img/chatbot.png">
     <link rel="stylesheet" href="../static/css/main.css">
     <script src="https://cdn.tailwindcss.com"></script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
     <title>SwiftCare</title>
 </head>
 <body>
-    <nav class="fixed w-full p-5 md:flex md:items-center md:justify-between px-10 lg:px-20 duration-200">
+    <nav class="fixed w-full p-5 md:flex md:items-center md:justify-between px-10 lg:px-20 duration-200 z-10">
         <div class="flex justify-between items-center lg:px-3 ">
             <span class="text-2xl">
                 <h1 class="text-3xl font-bold text-center text-violet-500">
@@ -27,7 +31,7 @@
                 <a href="#" class="text-xl hover:text-violet-500 duration-500">Home</a>
             </li>
             <li class="mx-8 my-6 md:my-0">
-                <a href="#" class="text-xl hover:text-violet-500 duration-500">Artikel</a>
+                <a href="#artikel" class="text-xl hover:text-violet-500 duration-500">Artikel</a>
             </li>
             <li class="mx-8 my-6 md:my-0">
                 <a href="#" class="text-xl hover:text-violet-500 duration-500">Chatbot</a>
@@ -52,6 +56,30 @@
                         <img src="../static/img/hero.png" alt="emotion-photo"/>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="artikel">
+        <div class="py-10 pb-10">
+            <div class="text-center px-40 pb-10">
+                <h1 class="text-3xl font-medium text-center text-violet-500 pt-10 pb-5">Artikel Kesehatan Mental</h1>
+                <p>Dapatkan wawasan baru dengan membaca artikel-artikel kesehatan mental yang akan membantu kamu mencapai keseimbangan emosional yang lebih baik. Jelajahi sekarang dan mulailah perjalanan menuju hidup yang lebih sehat secara mental.</p>
+            </div>
+    
+            <div class="swiper">
+                <!-- Additional required wrapper -->
+                <div class="swiper-wrapper pb-10" id="newsContainer">
+                    <div class="m-auto loading"></div>
+                    <!-- Slides -->
+                    
+                </div>
+                <!-- If we need pagination -->
+                <div class="swiper-pagination"></div>
+              
+                <!-- If we need navigation buttons -->
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
             </div>
         </div>
     </section>

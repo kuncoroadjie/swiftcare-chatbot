@@ -5,13 +5,29 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
 }
 
-:root {
-    --purple: #907BFF;
-    --secondary-purple: #998CDB;
-    --green: #82CA89;
-    --secondary-green: #E9FFEA;
-    --white: #F8F9FD;
-    --secondary-white: #E6EDFA;
-  }
+.swiper {
+    width: 1000px;
+}
+
+.logo-container img{
+    width: 150px;
+}
+@keyframes scroll-x {
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(calc(-100% - 20px));
+    }
+}
+
+.logo-container {
+    width: 100%;
+    /* animation: scroll-x 10s linear infinite; */
+    animation-delay: -3s;
+    animation-direction: reverse;
+}
+
