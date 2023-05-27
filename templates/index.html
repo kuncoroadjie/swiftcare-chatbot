@@ -4,14 +4,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="../static/img/chatbot.png">
-    <link rel="stylesheet" href="../static/css/main.css">
+    <link rel="shortcut icon" href="./static/img/chatbot.png">
+    <link rel="stylesheet" href="./static/css/main.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
     <script src="https://cdn.tailwindcss.com"></script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
-
-<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
     <title>SwiftCare</title>
 </head>
 <body>
@@ -28,7 +27,7 @@
         </div>
         <ul class="list-menu md:flex md:items-center md:z-auto md:static font-medium absolute w-full left-0 md:w-auto md:py-0 py-4 md:pl-0 pl-7 md:opacity-100 opacity-0 top-[-400px] transition-all ease-in duration-500">
             <li class="mx-8 my-6 md:my-0">
-                <a href="#" class="text-xl hover:text-violet-500 duration-500">Home</a>
+                <a href="index.html" class="text-xl hover:text-violet-500 duration-500">Home</a>
             </li>
             <li class="mx-8 my-6 md:my-0">
                 <a href="#artikel" class="text-xl hover:text-violet-500 duration-500">Artikel</a>
@@ -37,100 +36,99 @@
                 <a href="#" class="text-xl hover:text-violet-500 duration-500">Chatbot</a>
             </li>
             <li class="mx-8 my-6 md:my-0">
-                <a href="#" class="text-xl hover:text-violet-500 duration-500">Tentang Kami</a>
+                <a href="about.html" class="text-xl hover:text-violet-500 duration-500">Tentang Kami</a>
             </li>
         </ul>
     </nav>
 
-    <section id="hero">
-        <div class="min-h-screen px-8 pt-20 md:px-12 bg-gray-100 text-gray-800 text-center lg:text-left">
-            <div class="container mx-auto pt-5 xl:px-10">
-                <div class="grid lg:grid-cols-11 gap-12 flex items-center">
-                    <div class="mt-10 lg:mt-0 col-span-6">
-                        <h1 class="text-5xl md:text-6xl xl:text-6xl font-bold mb-2">Kenali Kesehatan Mentalmu</h1>
-                        <p class="mb-10 text-xl">Selamat datang di sumber informasi kesehatan mental yang dapat dipercaya! Jaga kesehatan mental Anda dengan wawasan tentang kesehatan mental dan tips untuk menjaga keseimbangan emosi Anda. 
-                            <br>Have a splendid day!</p>
-                        <a class="text-xl px-7 py-3 bg-violet-500 text-white font-medium text-sm rounded shadow-lg shadow-violet-500/50 hover:bg-violet-700 hover:shadow-violet-600/50" href="#" role="button">Mulai Chat</a>
+    <main>
+        <section id="hero">
+            <div class="min-h-screen px-8 pt-20 md:px-12 bg-gray-100 text-gray-800 text-center lg:text-left">
+                <div class="container mx-auto pt-5 xl:px-10">
+                    <div class="grid lg:grid-cols-11 gap-12 flex items-center">
+                        <div class="mt-10 lg:mt-0 col-span-6">
+                            <h1 class="text-5xl md:text-6xl xl:text-6xl font-bold mb-2">Kenali Kesehatan Mentalmu</h1>
+                            <p class="mb-10 text-xl">Selamat datang di sumber informasi kesehatan mental yang dapat dipercaya! Jaga kesehatan mental Anda dengan wawasan tentang kesehatan mental dan tips untuk menjaga keseimbangan emosi Anda. 
+                                <br>Have a splendid day!</p>
+                                <a class="text-xl px-7 py-3 bg-violet-500 text-white font-medium text-sm rounded shadow-lg shadow-violet-500/50 hover:bg-violet-700 hover:shadow-violet-600/50" href="#" role="button">Mulai Chat</a>
+                        </div>
+                        <div class="mb-12 lg:mb-0 lg:col-span-5 col-span-6">
+                            <img src="./static/img/hero.png" alt="emotion-photo"/>
+                        </div>
                     </div>
-                    <div class="mb-12 lg:mb-0 lg:col-span-5 col-span-6">
-                        <img src="../static/img/hero.png" alt="emotion-photo"/>
+                </div>
+            </div>
+        </section>
+        
+        <section id="artikel">
+            <div class="py-10 pb-10">
+                <div class="text-center px-5 lg:px-40 pb-10">
+                    <h1 class="text-3xl font-medium text-center text-violet-500 pt-10 pb-5">Artikel Kesehatan Mental</h1>
+                    <p>Dapatkan wawasan baru dengan membaca artikel-artikel kesehatan mental yang akan membantu kamu mencapai keseimbangan emosional yang lebih baik. Jelajahi sekarang dan mulailah perjalanan menuju hidup yang lebih sehat secara mental.</p>
+                </div>
+        
+                <div class="swiper px-0 lg:px-20">
+                    <div class="swiper-wrapper pb-10" id="newsContainer">
+                        <div class="m-auto loading"></div>
+                        <!-- article card -->
+                        
+                    </div>
+                    <div class="swiper-pagination"></div>
+                  
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="instansi">
+            <div class="px-5 py-20 md:px-10 lg:px-20">
+                <h1 class="text-3xl font-medium text-center text-violet-500 pb-10">Instansi Terkait</h1>
+                    <div class="flex items-center text-center gap-2 md:gap-10 lg:gap-20">
+                        <a href="https://kampusmerdeka.kemdikbud.go.id/" class="grayscale hover:grayscale-0">
+                            <img src="./static/img/kampus_merdeka.png" alt="kampus_merdeka">
+                        </a>
+                        <a href="https://amikompurwokerto.ac.id/" class="grayscale hover:grayscale-0">
+                            <img src="./static/img/amikom_purwokerto.png" alt="amikom_purwokerto">
+                        </a>
+                        <a href="https://unpkediri.ac.id/" class="grayscale hover:grayscale-0">
+                            <img src="./static/img/unp_kediri.png" alt="unp_kediri">
+                        </a>
+                        <a href="https://www.umm.ac.id/" class="grayscale hover:grayscale-0">
+                            <img src="./static/img/umm.png" alt="umm_malang">
+                        </a>
+                        <a href="https://poltektegal.ac.id" class="grayscale hover:grayscale-0">
+                            <img src="./static/img/poltek_tegal.png" alt="poltek_tegal">
+                        </a>
+                        <a href="https://orbitfutureacademy.id/" class="grayscale hover:grayscale-0">
+                            <img src="./static/img/orbit.png" alt="orbit_ofa">
+                        </a>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <section id="artikel">
-        <div class="py-10 pb-10">
-            <div class="text-center px-40 pb-10">
-                <h1 class="text-3xl font-medium text-center text-violet-500 pt-10 pb-5">Artikel Kesehatan Mental</h1>
-                <p>Dapatkan wawasan baru dengan membaca artikel-artikel kesehatan mental yang akan membantu kamu mencapai keseimbangan emosional yang lebih baik. Jelajahi sekarang dan mulailah perjalanan menuju hidup yang lebih sehat secara mental.</p>
-            </div>
-    
-            <div class="swiper">
-                <!-- Additional required wrapper -->
-                <div class="swiper-wrapper pb-10" id="newsContainer">
-                    <div class="m-auto loading"></div>
-                    <!-- Slides -->
-                    
-                </div>
-                <!-- If we need pagination -->
-                <div class="swiper-pagination"></div>
-              
-                <!-- If we need navigation buttons -->
-                <div class="swiper-button-prev"></div>
-                <div class="swiper-button-next"></div>
-            </div>
-        </div>
-    </section>
-
-    <section id="instansi">
-        <div class="px-20 py-20">
-            <h1 class="text-3xl font-medium text-center text-violet-500 pb-10">Instansi Terkait</h1>
-                <div class="flex items-center text-center gap-20">
-                    <a href="https://kampusmerdeka.kemdikbud.go.id/">
-                        <img src="../static/img/kampus_merdeka.png" alt="kampus_merdeka">
-                    </a>
-                    <a href="https://amikompurwokerto.ac.id/">
-                        <img src="../static/img/amikom_purwokerto.png" alt="amikom_purwokerto">
-                    </a>
-                    <a href="https://www.dicoding.com/">
-                        <img src="../static/img/unp_kediri.png" alt="unp_kediri">
-                    </a>
-                    <a href="https://www.umm.ac.id/">
-                        <img src="../static/img/umm.png" alt="umm_malang">
-                    </a>
-                    <a href="https://poltektegal.ac.id/">
-                        <img src="../static/img/poltek_tegal.png" alt="poltek_tegal">
-                    </a>
-                    <a href="https://orbitfutureacademy.id/">
-                        <img src="../static/img/orbit.png" alt="orbit_ofa">
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
     <footer class="bg-violet-500 py-10">
-        <div class="container mx-auto flex items-center justify-between text-white px-20">
-          <div class="w-80">
-              <h3 class="text-3xl font-bold">SWIFTCARE</h3>
-              <p class="mb-5">Sebuah aplikasi chatbot sebagai sistem informasi kesehatan mental kamu.</p>
-              <p class="font-medium text-xl">@2023 SWIFT3</p>
-          </div>
-          <div class="">
-            <p class="font-medium text-2xl text-right mb-2">Follow us on</p>
-            <span class="text-3xl cursor-pointer flex gap-5">
-                <ion-icon name="logo-facebook" class="hover:text-violet-800"></ion-icon>
-                <ion-icon name="logo-instagram" class="hover:text-violet-800"></ion-icon>
-                <ion-icon name="logo-twitter" class="hover:text-violet-800"></ion-icon>
-                <ion-icon name="logo-youtube" class="hover:text-violet-800"></ion-icon>
-            </span>
-          </div>
+        <div class="container mx-auto flex flex-col items-center md:flex-row md:items-center justify-between text-white px-20 text-center md:text-left">
+            <div class="w-80">
+                <h3 class="text-3xl font-bold">SWIFTCARE</h3>
+                <p class="mb-5">Sebuah aplikasi chatbot sebagai sistem informasi kesehatan mental kamu.</p>
+                <p class="font-medium text-xl">@2023 SWIFT3</p>
+            </div>
+            <div class="mt-8 md:mt-0">
+                <p class="font-medium text-2xl text-center md:text-right mb-2">Follow us on</p>
+                <span class="text-3xl cursor-pointer flex justify-center md:justify-end gap-5">
+                    <ion-icon name="logo-facebook" class="hover:text-violet-800"></ion-icon>
+                    <ion-icon name="logo-instagram" class="hover:text-violet-800"></ion-icon>
+                    <ion-icon name="logo-twitter" class="hover:text-violet-800"></ion-icon>
+                    <ion-icon name="logo-youtube" class="hover:text-violet-800"></ion-icon>
+                </span>
+            </div>
         </div>
-      </footer>
+    </footer>
     
-
-    <script src="../static/js/function.js"></script>
+    <script src="./static/js/navfunction.js"></script>
+    <script src="./static/js/articlefunction.js"></script>
 </body>
 </html>
