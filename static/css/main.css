@@ -8,26 +8,4 @@
     scroll-behavior: smooth;
 }
 
-.swiper {
-    width: 1000px;
-}
-
-.logo-container img{
-    width: 150px;
-}
-@keyframes scroll-x {
-    0% {
-      transform: translateX(0%);
-    }
-    100% {
-      transform: translateX(calc(-100% - 20px));
-    }
-}
-
-.logo-container {
-    width: 100%;
-    /* animation: scroll-x 10s linear infinite; */
-    animation-delay: -3s;
-    animation-direction: reverse;
-}
 
