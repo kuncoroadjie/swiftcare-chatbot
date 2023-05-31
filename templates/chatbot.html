@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>SwiftCare</title>
+  <link rel="shortcut icon" href="./static/img/chatbot.png">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+
+<body>
+  <nav class="fixed w-full p-5 md:flex md:items-center md:justify-between px-10 lg:px-20 duration-200 z-10 bg-white">
+    <div class="flex justify-between items-center lg:px-3 ">
+        <span class="text-2xl">
+            <h1 class="text-3xl font-bold text-center text-violet-500">
+                SWIFTCARE
+            </h1>
+        </span>
+        <span class="text-3xl cursor-pointer mx-2 md:hidden block">
+            <ion-icon name="menu-outline" onclick="Menu(this)"></ion-icon>
+        </span>
+    </div>
+    <ul class="list-menu md:flex md:items-center md:z-auto md:static font-medium absolute w-full left-0 md:w-auto md:py-0 py-4 md:pl-0 pl-7 md:opacity-100 opacity-0 top-[-400px] transition-all ease-in duration-500">
+        <li class="mx-8 my-6 md:my-0">
+            <a href="{{ url_for('home') }}" class="text-xl hover:text-violet-500 duration-500">Home</a>
+        </li>
+        <li class="mx-8 my-6 md:my-0">
+            <a href="{{ url_for('home') }}#artikel" class="text-xl hover:text-violet-500 duration-500">Artikel</a>
+        </li>
+        <li class="mx-8 my-6 md:my-0">
+            <a href="#" class="text-xl hover:text-violet-500 duration-500">Chatbot</a>
+        </li>
+        <li class="mx-8 my-6 md:my-0">
+            <a href="{{ url_for('about') }}" class="text-xl hover:text-violet-500 duration-500">Tentang Kami</a>
+        </li>
+    </ul>
+</nav>
+  <div class="bg-gradient-to-br from-violet-500 to-indigo-500 h-screen pt-8 lg:pt-24 lg:py-5 ">
+    <section class="mx-auto flex flex-col justify-between w-full max-w-4xl h-full border-2 rounded bg-white shadow-md">
+      <header class="p-2 text-center border-b bg-gray-200 text-gray-700">
+        <div class="text-lg font-bold">
+          SwiftCare
+        </div>
+      </header>
+
+      <main class="msger-chat flex-1 overflow-y-auto p-2 w-full bg-[url('https://github-production-user-asset-6210df.s3.amazonaws.com/64425575/239928765-dea630ae-36da-4ec4-8fd6-a3391f7d9478.svg')]">
+        <div class="flex items-end mb-3">
+          <div class="hidden lg:inline w-12 h-12 mx-2 rounded-full bg-cover bg-[url('../static/img/chatbot.png')]"></div>
+
+          <div class="p-3 rounded bg-gray-200 max-w-md">
+            <div class="flex items-center justify-between mb-2">
+              <div class="font-bold text-xs lg:text-sm">SwiftCare</div>
+            </div>
+
+            <div class="text-xs lg:text-sm">
+              Hi, welcome to SwiftCare 😄
+            </div>
+          </div>
+        </div>
+
+      </main>
+
+      <form class="msger-inputarea p-2 border-t bg-gray-200 flex">
+        <input type="text" class="msger-input flex-1 mr-2 py-2 px-4 rounded-lg bg-gray-100" id="textInput" placeholder="Enter your message...">
+        <button type="submit" class="py-2 px-4 bg-purple-500 text-white font-bold rounded-lg transition duration-200 hover:bg-purple-700">Kirim</button>
+      </form>
+    </section>
+  </div>
+
+  <script src='https://use.fontawesome.com/releases/v5.0.13/js/all.js'></script>
+  <script src="./static/js/navfunction.js"></script>
+  <script>
+
+    const msgerForm = get(".msger-inputarea");
+    const msgerInput = get(".msger-input");
+    const msgerChat = get(".msger-chat");
+
+
+    // Icons made by Freepik from www.flaticon.com
+    const BOT_IMG = "../static/img/chatbot.png";
+    const PERSON_IMG = "../static/img/user.png";
+    const BOT_NAME = "SwiftCare";
+    const PERSON_NAME = "Kamu";
+
+    msgerForm.addEventListener("submit", event => {
+      event.preventDefault();
+
+      const msgText = msgerInput.value;
+      if (!msgText) return;
+
+      appendMessage(PERSON_NAME, PERSON_IMG, "flex-row-reverse", msgText, "bg-violet-300");
+      msgerInput.value = "";
+      botResponse(msgText);
+    });
+
+
+    function appendMessage(name, img, side, text, color) {
+      const msgHTML = `
+        <div class="msg ${side} flex mb-3 items-end">
+          <div class="msg-img w-12 h-12 bg-cover mx-2 rounded-full hidden lg:inline bg-[url('${img}')] "></div>
+
+          <div class="p-3 rounded ${color} max-w-md">
+            <div class="flex items-center justify-between mb-2">
+              <div class=" font-bold mr-5 text-xs lg:text-sm">${name}</div>
+            <div>${formatDate(new Date())}</div>
+          </div>
+
+            <div class="text-xs lg:text-sm">${text}</div>
+          </div>
+        </div>
+        `;
+
+      msgerChat.insertAdjacentHTML("beforeend", msgHTML);
+      msgerChat.scrollTop += 500;
+    }
+
+    function botResponse(rawText) {
+
+      // Bot Response
+      $.get("/get", { msg: rawText }).done(function (data) {
+        const msgText = data;
+        appendMessage(BOT_NAME, BOT_IMG, "flex-row", msgText, "bg-gray-200");
+      });
+    }
+
+    function get(selector, root = document) {
+      return root.querySelector(selector);
+    }
+
+    function formatDate(date) {
+      const h = "0" + date.getHours();
+      const m = "0" + date.getMinutes();
+
+      return `${h.slice(-2)}:${m.slice(-2)}`;
+    }
+  </script>
+  
+</body>
+
+</html>
