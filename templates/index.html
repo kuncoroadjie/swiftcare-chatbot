@@ -27,16 +27,16 @@
         </div>
         <ul class="list-menu md:flex md:items-center md:z-auto md:static font-medium absolute w-full left-0 md:w-auto md:py-0 py-4 md:pl-0 pl-7 md:opacity-100 opacity-0 top-[-400px] transition-all ease-in duration-500">
             <li class="mx-8 my-6 md:my-0">
-                <a href="index.html" class="text-xl hover:text-violet-500 duration-500">Home</a>
+                <a href="#" class="text-xl hover:text-violet-500 duration-500">Home</a>
             </li>
             <li class="mx-8 my-6 md:my-0">
                 <a href="#artikel" class="text-xl hover:text-violet-500 duration-500">Artikel</a>
             </li>
             <li class="mx-8 my-6 md:my-0">
-                <a href="#" class="text-xl hover:text-violet-500 duration-500">Chatbot</a>
+                <a href="{{ url_for('bot') }}" class="text-xl hover:text-violet-500 duration-500">Chatbot</a>
             </li>
             <li class="mx-8 my-6 md:my-0">
-                <a href="about.html" class="text-xl hover:text-violet-500 duration-500">Tentang Kami</a>
+                <a href="{{ url_for('about') }}" class="text-xl hover:text-violet-500 duration-500">Tentang Kami</a>
             </li>
         </ul>
     </nav>
